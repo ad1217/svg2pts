@@ -79,9 +79,9 @@ dependencies = [
 
 [[package]]
 name = "euclid"
-version = "0.20.14"
+version = "0.22.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2bb7ef65b3777a325d1eeefefab5b6d4959da54747e33bd6258e789640f307ad"
+checksum = "b52c2ef4a78da0ba68fbe1fd920627411096d2ac478f7f4c9f3a54ba6705bade"
 dependencies = [
  "num-traits",
 ]
@@ -114,15 +114,6 @@ dependencies = [
 
 [[package]]
 name = "kurbo"
-version = "0.5.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bf50e17a1697110c694d47c5b1a6b64faf5eb3ffe5a286df23fb8cd516e33be6"
-dependencies = [
- "arrayvec 0.5.2",
-]
-
-[[package]]
-name = "kurbo"
 version = "0.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a53776d271cfb873b17c618af0298445c88afc52837f3e948fa3fafd131f449"
@@ -141,9 +132,9 @@ dependencies = [
 
 [[package]]
 name = "lyon_geom"
-version = "0.15.3"
+version = "0.17.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9962a2ba81382716b87d7d358493cb71844c1f9165ddad763cd9f4d3f5474df2"
+checksum = "71d89ccbdafd83d259403e22061be27bccc3254bba65cdc5303250c4227c8c8e"
 dependencies = [
  "arrayvec 0.5.2",
  "euclid",
@@ -243,7 +234,7 @@ name = "svg2pts"
 version = "0.1.5"
 dependencies = [
  "error-chain",
- "kurbo 0.5.11",
+ "kurbo",
  "lyon_geom",
  "ryu",
  "usvg",
@@ -311,7 +302,7 @@ dependencies = [
  "flate2",
  "float-cmp",
  "fontdb",
- "kurbo 0.8.3",
+ "kurbo",
  "log",
  "pico-args",
  "rctree",
