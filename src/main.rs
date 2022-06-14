@@ -3,9 +3,8 @@ use lyon_geom::euclid::Vector2D;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io;
-use usvg::prelude::*;
 use kurbo::common::solve_quadratic; // usvg already uses kurbo
-use usvg::{NodeKind, Options, PathSegment, Tree, TransformedPath};
+use usvg::{NodeKind, NodeExt, Options, PathSegment, Tree, TransformedPath};
 
 use error_chain::bail;
 mod errors {
@@ -421,7 +420,7 @@ fn run() -> Result<()> {
         PointBufWriter::new(Box::new(raw_stdout()))
     };
 
-    let tree = Tree::from_data(&svg_buf, &Options::default())
+    let tree = Tree::from_data(&svg_buf, &Options::default().to_ref())
         .chain_err(|| "unable to parse svg")?;
 
     let paths = extract_paths(&tree);
